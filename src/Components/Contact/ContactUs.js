@@ -1,6 +1,7 @@
 import React from "react";
 import "./ContactUs.css";
-import styles from "./ContactUs.module.css"; // Importing styles from CSS module if needed
+import styles from "./ContactUs.module.css"; 
+import Footer from "../Footer/Footer";
 
 const ContactUs = () => {
   return (
@@ -104,85 +105,7 @@ const ContactUs = () => {
           </section>
 
           {/* Footer Section */}
-          <footer className="footer">
-            <div className="container">
-              <div className="footer-grid">
-                {/* Company Info */}
-                <div className="footer-column">
-                  <img
-                    src="https://zidio.in/assets/images/home-2/zidio.png"
-                    alt="Zidio Development Logo"
-                    className="footer-logo"
-                  />
-                  <p>
-                    At Zidio Development, we specialize in innovative software
-                    solutions. Our team is dedicated to delivering high-quality
-                    projects.
-                  </p>
-                  <a href="#" className="btn discover-more">
-                    Discover More →
-                  </a>
-                </div>
-
-                {/* Company Links */}
-                <div className="footer-column">
-                  <h3>Company</h3>
-                  <ul>
-                    <li>
-                      <a href="#">About</a>
-                    </li>
-                    <li>
-                      <a href="#">Our Team</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact</a>
-                    </li>
-                    <li>
-                      <a href="#">Careers</a>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Services Links */}
-                <div className="footer-column">
-                  <h3>Our Services</h3>
-                  <ul>
-                    <li>
-                      <a href="#">IT Solutions</a>
-                    </li>
-                    <li>
-                      <a href="#">Cyber Security</a>
-                    </li>
-                    <li>
-                      <a href="#">Digital Marketing</a>
-                    </li>
-                    <li>
-                      <a href="#">Machine Learning</a>
-                    </li>
-                    <li>
-                      <a href="#">Cloud Services</a>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Newsletter Signup */}
-                <div className="footer-column">
-                  <h3>Newsletter</h3>
-                  <p>Subscribe to Latest Newsletter</p>
-                  <form action="#" className="newsletter-form">
-                    <input
-                      type="email"
-                      placeholder="Enter Your E-Mail"
-                      required
-                    />
-                    <button type="submit" className="btn subscribe-btn">
-                      Subscribe
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </footer>
+          <Footer/>
         </div>
       </div>
     </>

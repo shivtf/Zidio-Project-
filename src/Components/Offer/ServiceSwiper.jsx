@@ -81,7 +81,7 @@ function ServiceSwiper() {
         className="mySwiper"
         speed={1200}
         autoplay={{
-          delay: 2500, // Delay between transitions in milliseconds
+          delay: 280, // Delay between transitions in milliseconds
           disableOnInteraction: false, // Autoplay will not be disabled after interaction
         }}
       >
