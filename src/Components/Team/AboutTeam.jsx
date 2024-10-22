@@ -38,16 +38,16 @@ const AboutTeam = () => {
   const swiperRef = useRef(null);
 
   return (
-    <div className="bg-gray-300 dark:bg-gray-800 p-8 transition-colors duration-300 px-44 pt-20">
-      <div className="flex content-center mb-20">
-        <h1 className="mr-32 text-5xl">
-          Meet Our Dedicated Member
+    <div className="bg-gray-300 dark:bg-gray-800 p-8 transition-colors duration-300 px-4 md:px-8 lg:px-16 pt-20">
+      <div className="flex flex-col md:flex-row content-center mb-20">
+        <h1 className="text-3xl md:text-5xl mb-4 md:mb-0 md:mr-32">
+          Meet Our Dedicated Members
           <br />
           For Any Enquiry
         </h1>
         {/* Align button to the right side */}
         <button className="ml-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-          All Member &rarr;
+          All Members &rarr;
         </button>
       </div>
 
@@ -57,8 +57,8 @@ const AboutTeam = () => {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={3} // Default for small screens
+          spaceBetween={10} // Space between slides for small screens
           coverflowEffect={{
             rotate: 30,
             stretch: 0,
@@ -113,7 +113,7 @@ const AboutTeam = () => {
                     </li>
                     <li>
                       <a href="#" className="text-blue-600">
-                      <i class="fa-brands fa-linkedin"></i>
+                      <i className="fa-brands fa-linkedin"></i>
                       </a>
                     </li>
                     <li>

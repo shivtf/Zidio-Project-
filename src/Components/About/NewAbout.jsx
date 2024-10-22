@@ -71,17 +71,17 @@ function About() {
           autoPlay
           playsInline
         />
-        <div className="absolute inset-0 bg-black opacity-50 z-1"></div>{" "}
-        <div className="relative z-10">
-          <p className="text-white text-lg uppercase tracking-wide mb-12">
+        <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
+        <div className="relative z-10 px-4">
+          <p className="text-white text-lg uppercase tracking-wide mb-4">
             Innovative Digital Solutions
           </p>
 
-          <h1 className="text-white text-5xl md:text-6xl font-bold mb-12">
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Transforming Ideas into <br /> Reality
           </h1>
 
-          <p className="text-gray-300 max-w-2xl mb-14">
+          <p className="text-gray-300 max-w-2xl mb-6">
             At Zidio Development, we merge technology and creativity to deliver
             bespoke software and applications that empower businesses worldwide.
           </p>
@@ -92,13 +92,13 @@ function About() {
         </div>
       </div>
 
-      <div className="my-12">
+      <div className="my-12 px-4">
         <Swiper
           ref={swiperRef}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3} 
+          slidesPerView={3} // Change to 1 for small screens
           spaceBetween={10} 
           coverflowEffect={{
             rotate: 30,
@@ -124,7 +124,7 @@ function About() {
               onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
             >
               <div
-                className={`rounded-3xl p-4 max-w-xs mx-auto h-[400px] relative flex flex-col items-center justify-center ${
+                className={`rounded-3xl p-4 mx-auto h-[400px] relative flex flex-col items-center justify-center ${
                   theme === "light"
                     ? "bg-gray-800 text-white"
                     : "bg-white text-black"
@@ -157,15 +157,14 @@ function About() {
           playsInline
         />
         <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
-        <div className="relative grid grid-cols-2 z-10 gap-10 pl-40 pr-40">
-          <div>
-          </div>
+        <div className="relative grid grid-cols-1 md:grid-cols-2 z-10 gap-10 p-4">
+          <div></div>
           <div>
             <p className="text-white text-lg mt-4">
               Software Development & Consultancy
             </p>
-            <h1 className="text-white text-6xl mb-8">
-              Who we are and <br /> What we do ?
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8">
+              Who we are and <br /> What we do?
             </h1>
             <p className="text-white text-md mb-8">
               Welcome to Zidio Development Pvt. Ltd. We are a trailblazing
@@ -182,8 +181,8 @@ function About() {
               groundbreaking projects, tech trends, career opportunities, and
               our journey in shaping the future of technology.
             </p>
-            <div className="flex items-center text-white space-y-2 mt-10">
-              <div className="mr-20 flex flex-col justify-center">
+            <div className="flex flex-col md:flex-row items-center text-white space-y-4 md:space-y-0 md:space-x-4 mt-10">
+              <div className="flex flex-col justify-center">
                 <h1 className="mb-2">
                   <span className="mr-2">&#10003;</span>Company and Research
                 </h1>
@@ -193,7 +192,7 @@ function About() {
               </div>
 
               {/* Center this div vertically */}
-              <div className="mr-7 flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <div className="w-20 h-20 border-4 border-blue-500 rounded-full flex items-center justify-center text-white p-2">
                   <h1 className="text-xl">100%</h1>
                 </div>
@@ -205,113 +204,32 @@ function About() {
               </div>
             </div>
 
-            <button>More About &rarr;</button>
+            <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+              More About &rarr;
+            </button>
           </div>
         </div>
       </div>
-      {/* */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-full bg-black text-white py-24 px-44">
-        <div className="w-full max-w-screen-md mb-12 md:mb-0 mr-20">
-          <h2 className="text-6xl text-center mb-16">Why Choose Us?</h2>
 
-          {/* Main flex container for sub-items */}
-          <div className="flex flex-col space-y-6">
-            {/* First item */}
-            <div className="flex items-start rounded shadow-md">
-              <div className="flex-shrink-0">
-                <div className=" rounded-full p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    className="h-12 w-12 text-white"
-                  >
-                    <path
-                      fill="white"
-                      d="M371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">Expert Team</h3>
-                <p>
-                  Our diverse team of experts excels in their fields, delivering
-                  solutions that are both innovative and effective.
-                </p>
-              </div>
-            </div>
-
-            {/* Second item */}
-            <div className="flex items-start rounded shadow-md">
-              <div className="flex-shrink-0">
-                <div className="rounded-full p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    className="h-12 w-12 text-white"
-                  >
-                    <path
-                      fill="white"
-                      d="M371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">
-                  Cutting-Edge Technology
-                </h3>
-                <p>
-                  We leverage the latest technologies to build future-ready
-                  solutions, ensuring your business stays ahead of the
-                  competition.
-                </p>
-              </div>
-            </div>
-
-            {/* Third item */}
-            <div className="flex items-start rounded shadow-md">
-              <div className="flex-shrink-0">
-                <div className="bg-black rounded-full p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    className="h-12 w-12 text-white"
-                  >
-                    <path
-                      fill="white"
-                      d="M371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">
-                  Client-Centric Approach
-                </h3>
-                <p>
-                  We prioritize your needs, promoting transparency and
-                  collaboration for the best results throughout our engagement.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className="flex flex-col md:flex-row items-center justify-between w-full bg-black text-white py-24 px-4 lg:px-44">
+        <div className="w-full max-w-screen-md mb-12 md:mb-0">
+          <h1 className="text-4xl font-bold mb-4">Meet Our Team</h1>
+          <p className="text-lg">
+            Meet our team of dedicated professionals committed to delivering
+            excellence and innovation in every project we undertake.
+          </p>
         </div>
 
-        <div className="w-full max-w-screen-md">
-          <img
-            src="https://popular-patrice-x4hp.zipwp.link/wp-content/uploads/2024/10/man-in-black-shirt-sitting-in-front-of-computer-3861959.jpeg"
-            alt="Team Member"
-            className="object-cover w-full h-96 rounded-lg shadow-lg"
-          />
+        <div className="flex justify-center">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+            Explore Team
+          </button>
         </div>
       </div>
-      {/* */}
+
       <AboutTeam />
-      {/* */}
       <Testimonials />
-      {/* */}
-      <Footer/>
+      <Footer />
     </div>
   );
 }

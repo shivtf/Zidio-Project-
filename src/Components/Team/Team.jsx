@@ -38,11 +38,11 @@ function Team() {
           className="w-full h-full object-cover"
         />
 
-        <span className="absolute top-32 left-1/2 transform -translate-x-1/2 text-black text-center font-semibold text-[40px]">
+        <span className="absolute top-10 left-1/2 transform -translate-x-1/2 text-black text-center font-semibold text-4xl md:text-5xl">
           Meet the Dedicated Team
         </span>
 
-        <div className="flex items-center text-blue-600 absolute top-52 left-1/2 transform -translate-x-1/2 text-center font-semibold text-[24px] space-x-4">
+        <div className="flex items-center text-blue-600 absolute top-28 left-1/2 transform -translate-x-1/2 text-center font-semibold text-lg md:text-xl space-x-4">
           <Link to="/contact">
             <img
               src="https://ausdroid.net/wp-content/uploads/2017/05/contacts.png"
@@ -50,11 +50,11 @@ function Team() {
               className="w-[50px] h-[50px]"
             />
           </Link>
-          <span>for any Query</span>
+          <span>for any Query</span><br /><br />
         </div>
         <br /><br />
-        {/* Added margin-top to the Swiper container */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-11/12 mt-60">
+
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-11/12 mt-20">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
@@ -70,20 +70,19 @@ function Team() {
           >
             {teammembers.map((member, index) => (
               <SwiperSlide key={index}>
-                <div className="relative group bg-white  rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300">
+                <div className="relative group bg-white rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 shadow-lg">
                   <div className="aspect-w-4 aspect-h-3">
                     <img
                       src={member.imgSrc}
-                      alt={member.name}
-                      className="w-[500px] h-[500px] object-cover"
+                      alt={`Image of ${member.name}, ${member.position}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
 
                   {/* Hover Content */}
                   <div className="absolute inset-0 bg-blue-500 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                    <h3 className="text-white text-2xl font-bold mb-2">
-                      {member.name}
-                    </h3>
+                    <h3 className="text-white text-2xl font-bold mb-2">{member.name}</h3>
                     <p className="text-white text-lg">{member.position}</p>
                   </div>
                 </div>

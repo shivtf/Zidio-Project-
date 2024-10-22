@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 import Footer from "../Footer/Footer";
+import "./Services.css";
 
 function Services() {
   const { theme } = useContext(ThemeContext);
