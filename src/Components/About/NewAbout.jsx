@@ -65,7 +65,7 @@ function About() {
         <video
           ref={videoRef}
           className="absolute top-0 left-0 w-full h-full object-cover"
-          src="3255275-uhd_3840_2160_25fps.mp4" 
+          src="3255275-uhd_3840_2160_25fps.mp4"
           muted
           loop
           autoPlay
@@ -92,14 +92,32 @@ function About() {
         </div>
       </div>
 
-      <div className="my-12 px-4">
+      <div className="my-12 px-2">
         <Swiper
           ref={swiperRef}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3} // Change to 1 for small screens
-          spaceBetween={10} 
+          slidesPerView={3} // Default for medium screens
+          spaceBetween={20} // Default space between cards
+          breakpoints={{
+            360: {
+              slidesPerView: 1, // 1 card on small screens (mobile)
+              spaceBetween: 10, // Less space on mobile
+            },
+            640: {
+              slidesPerView: 1, // 1 card on small screens (mobile)
+              spaceBetween: 10, // Less space on mobile
+            },
+            1024: {
+              slidesPerView: 2, // 2 cards on medium screens (tablets)
+              spaceBetween: 10, // Moderate space on tablets
+            },
+            1440: {
+              slidesPerView: 3, // 3 cards on larger screens (desktops)
+              spaceBetween: 10, // Reduced space between cards for desktops
+            },
+          }}
           coverflowEffect={{
             rotate: 30,
             stretch: 0,
@@ -108,11 +126,11 @@ function About() {
             slideShadows: false,
           }}
           autoplay={{
-            delay: 1000, 
+            delay: 1000,
             disableOnInteraction: false,
           }}
           loop={true}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} 
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           modules={[EffectCoverflow, Autoplay]}
           className="mySwiper"
           speed={1200}
@@ -124,7 +142,7 @@ function About() {
               onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
             >
               <div
-                className={`rounded-3xl p-4 mx-auto h-[400px] relative flex flex-col items-center justify-center ${
+                className={`rounded-2xl p-4 mx-auto h-[400px] w-[280px] sm:w-[350px] lg:w-[300px] relative flex flex-col items-center justify-center ${
                   theme === "light"
                     ? "bg-gray-800 text-white"
                     : "bg-white text-black"
@@ -135,7 +153,7 @@ function About() {
                   alt={card.title}
                   className={`absolute top-[20px] left-1/2 transform -translate-x-1/2 w-[60px] h-[60px] ${
                     theme === "light" ? "filter invert" : "filter"
-                  }`} 
+                  }`}
                 />
                 <h2 className="text-lg font-bold mt-8">{card.title}</h2>
                 <br />
@@ -146,7 +164,7 @@ function About() {
         </Swiper>
       </div>
 
-      <div className="relative h-[80vh] flex justify-center items-center">
+      <div className="relative h-[100vh] flex justify-center items-center">
         <video
           ref={videoRef}
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -156,17 +174,21 @@ function About() {
           autoPlay
           playsInline
         />
+
+        {/* Overlay for the video */}
         <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
-        <div className="relative grid grid-cols-1 md:grid-cols-2 z-10 gap-10 p-4">
-          <div></div>
+
+        {/* Content container */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 z-10 gap-6 md:gap-10 p-4">
+          <div></div> {/* Empty grid column */}
           <div>
-            <p className="text-white text-lg mt-4">
+            <p className="text-white text-md md:text-lg mt-4">
               Software Development & Consultancy
             </p>
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8">
+            <h1 className="text-white text-3xl md:text-5xl lg:text-6xl mb-6 lg:mb-8">
               Who we are and <br /> What we do?
             </h1>
-            <p className="text-white text-md mb-8">
+            <p className="text-white text-sm md:text-md mb-6 lg:mb-8">
               Welcome to Zidio Development Pvt. Ltd. We are a trailblazing
               software development company where innovation meets expertise. Our
               team of skilled developers and creative thinkers specializes in
@@ -181,8 +203,10 @@ function About() {
               groundbreaking projects, tech trends, career opportunities, and
               our journey in shaping the future of technology.
             </p>
+
+            {/* Responsive flex container for additional content */}
             <div className="flex flex-col md:flex-row items-center text-white space-y-4 md:space-y-0 md:space-x-4 mt-10">
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center text-center md:text-left">
                 <h1 className="mb-2">
                   <span className="mr-2">&#10003;</span>Company and Research
                 </h1>
@@ -191,39 +215,23 @@ function About() {
                 </h1>
               </div>
 
-              {/* Center this div vertically */}
               <div className="flex items-center justify-center">
-                <div className="w-20 h-20 border-4 border-blue-500 rounded-full flex items-center justify-center text-white p-2">
-                  <h1 className="text-xl">100%</h1>
+                <div className="w-16 h-16 md:w-20 md:h-20 border-4 border-blue-500 rounded-full flex items-center justify-center text-white p-2">
+                  <h1 className="text-lg md:text-xl">100%</h1>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center text-center md:text-left">
                 <h1 className="mb-2">Business Solution</h1>
                 <h1>Level is high</h1>
               </div>
             </div>
 
-            <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+            {/* Responsive button */}
+            <button className="mt-4 bg-blue-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:mb-6 hover:bg-blue-600">
               More About &rarr;
             </button>
           </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row items-center justify-between w-full bg-black text-white py-24 px-4 lg:px-44">
-        <div className="w-full max-w-screen-md mb-12 md:mb-0">
-          <h1 className="text-4xl font-bold mb-4">Meet Our Team</h1>
-          <p className="text-lg">
-            Meet our team of dedicated professionals committed to delivering
-            excellence and innovation in every project we undertake.
-          </p>
-        </div>
-
-        <div className="flex justify-center">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-            Explore Team
-          </button>
         </div>
       </div>
 

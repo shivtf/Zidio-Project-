@@ -57,8 +57,22 @@ const AboutTeam = () => {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3} // Default for small screens
-          spaceBetween={10} // Space between slides for small screens
+          slidesPerView={1} // For small screens
+          breakpoints={{
+            640: {
+              slidesPerView: 1, // One card for mobile screens
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2, // Two cards for medium screens (e.g., tablets)
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3, // Three cards for desktop screens
+              spaceBetween: 40,
+            },
+          }}
+          spaceBetween={10}
           coverflowEffect={{
             rotate: 30,
             stretch: 0,
@@ -95,9 +109,11 @@ const AboutTeam = () => {
                 {/* Team Member Info */}
                 <div className="p-3 text-center">
                   <h4 className="text-lg font-bold">{team.name}</h4>
-                  <p className="text-gray-600 dark:text-gray-500 text-sm">{team.position}</p>
+                  <p className="text-gray-600 dark:text-gray-500 text-sm">
+                    {team.position}
+                  </p>
                 </div>
-                
+
                 {/* Social Media Icons */}
                 <div className="team-social-icon-box absolute inset-0 bg-blue-200 bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
                   <ul className="flex space-x-5 text-3xl"> {/* Increased icon size */}
@@ -113,7 +129,7 @@ const AboutTeam = () => {
                     </li>
                     <li>
                       <a href="#" className="text-blue-600">
-                      <i className="fa-brands fa-linkedin"></i>
+                        <i className="fa-brands fa-linkedin"></i>
                       </a>
                     </li>
                     <li>
@@ -121,7 +137,6 @@ const AboutTeam = () => {
                         <i className="fab fa-instagram"></i>
                       </a>
                     </li>
-                    
                   </ul>
                 </div>
               </div>
